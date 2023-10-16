@@ -19,7 +19,7 @@
     >
       <i class="el-icon-plus"></i>
     </el-upload>
-    
+
     <!-- 上传提示 -->
     <div class="el-upload__tip" slot="tip" v-if="showTip">
       请上传
@@ -155,7 +155,16 @@ export default {
     // 上传成功回调
     handleUploadSuccess(res, file) {
       if (res.code === 200) {
-        this.uploadList.push({ name: res.fileName, url: res.fileName });
+        let fileSize = file.raw.size / 1024; //KB
+        fileSize = Math.floor(fileSize * 1000) / 1000; // 小数取整后三位
+        let suffix = file.raw.name.split('.').pop().toLocaleLowerCase();
+        this.uploadList.push({
+          name: res.fileName,
+          url: res.fileName,
+          size: fileSize,
+          mime: file.raw.type,
+          suffix: suffix
+        });
         this.uploadedSuccessfully();
       } else {
         this.number--;
@@ -170,7 +179,7 @@ export default {
       const findex = this.fileList.map(f => f.name).indexOf(file.name);
       if(findex > -1) {
         this.fileList.splice(findex, 1);
-        this.$emit("input", this.listToString(this.fileList));
+        this.$emit("input", this.fileList);
       }
     },
     // 上传失败
@@ -184,7 +193,7 @@ export default {
         this.fileList = this.fileList.concat(this.uploadList);
         this.uploadList = [];
         this.number = 0;
-        this.$emit("input", this.listToString(this.fileList));
+        this.$emit("input", this.fileList);
         this.$modal.closeLoading();
       }
     },
@@ -192,6 +201,19 @@ export default {
     handlePictureCardPreview(file) {
       this.dialogImageUrl = file.url;
       this.dialogVisible = true;
+    },
+    asyncImgChecked(file) {
+      return new Promise((resolve, reject) => {
+        let reader = new FileReader();
+        reader.readAsDataURL(file.raw); // 必须用file.raw
+        reader.onload = () => { // 让页面中的img标签的src指向读取的路径
+          let img = new Image();
+          img.src = reader.result;
+          img.onload = () => {
+            resolve({width:img.width,height:img.height});
+          }
+        };
+      })
     },
     // 对象转成指定字符串分隔
     listToString(list, separator) {

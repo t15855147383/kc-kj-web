@@ -134,6 +134,25 @@
                 <artifactId>kaptcha</artifactId>
                 <version>${kaptcha.version}</version>
             </dependency>
+            <!-- CANAL -->
+            <dependency>
+                <groupId>com.alibaba.otter</groupId>
+                <artifactId>canal.client</artifactId>
+                <version>1.1.4</version>
+            </dependency>
+            <!-- KAFKA -->
+            <dependency>
+                <groupId>org.springframework.kafka</groupId>
+                <artifactId>spring-kafka</artifactId>
+                <version>2.9.0</version>
+            </dependency>
+
+            <!-- 接口模块-->
+            <dependency>
+                <groupId>com.ruoyi</groupId>
+                <artifactId>ruoyi-api</artifactId>
+                <version>${ruoyi.version}</version>
+            </dependency>
 
             <!-- 定时任务-->
             <dependency>
@@ -180,6 +199,7 @@
         <module>ruoyi-quartz</module>
         <module>ruoyi-generator</module>
         <module>ruoyi-common</module>
+        <module>ruoyi-api</module>
     </modules>
     <packaging>pom</packaging>
 

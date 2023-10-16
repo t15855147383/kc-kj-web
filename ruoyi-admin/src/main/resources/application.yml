@@ -129,3 +129,16 @@ xss:
   excludes: /system/notice
   # 匹配链接
   urlPatterns: /system/*,/monitor/*,/tool/*
+# kafka配置
+kafka:
+  host: 127.0.0.1
+  port: 9092
+  groupId: test
+  topics: kc-kj-web-test
+  offsetReset: earliest
+canal:
+  host: 127.0.0.1
+  post: 11111
+  tableName: kc-kj-web
+  batchSize: 10000
+  sleep: 10

@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.business.mapper.TMenuMapper">
+
+	<resultMap type="TMenu" id="TMenuResult">
+		<result property="id"    column="id"    />
+		<result property="parentId"    column="parent_id"    />
+		<result property="name"    column="name"    />
+		<result property="pageId"    column="page_id"    />
+		<result property="param"    column="param"    />
+		<result property="sort"    column="sort"    />
+		<result property="delFlag"    column="del_flag"    />
+		<result property="createBy"    column="create_by"    />
+		<result property="createTime"    column="create_time"    />
+		<result property="updateBy"    column="update_by"    />
+		<result property="updateTime"    column="update_time"    />
+		<result property="remark"    column="remark"    />
+		<association property="page" column="{id=page_id}" javaType="com.ruoyi.business.domain.TPage" select="com.ruoyi.business.mapper.TPageMapper.selectTPageById"/>
+	</resultMap>
+
+	<sql id="selectTMenuVo">
+		select id, parent_id, name, page_id, param,sort,
+		       del_flag, create_by, create_time, update_by, update_time, remark
+		from t_menu
+	</sql>
+
+	<select id="selectTMenuList" parameterType="TMenu" resultMap="TMenuResult">
+		<include refid="selectTMenuVo"/>
+		<where>
+			<if test="parentId != null"> and `parent_id` = #{parentId} </if>
+			<if test="name != null  and name != ''"> and `name` like concat('%', #{name}, '%')</if>
+		</where>
+		order by `sort` asc
+	</select>
+
+	<select id="selectTMenuById" parameterType="Long" resultMap="TMenuResult">
+		<include refid="selectTMenuVo"/>
+		where id = #{id}
+	</select>
+
+	<insert id="insertTMenu" parameterType="TMenu" useGeneratedKeys="true" keyProperty="id">
+		insert into t_menu
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="parentId != null">parent_id,</if>
+			<if test="name != null and name != ''">`name`,</if>
+			<if test="pageId != null">`page_id`,</if>
+			<if test="param != null">param,</if>
+			<if test="sort != null">sort,</if>
+			<if test="delFlag != null">del_flag,</if>
+			<if test="createBy != null">create_by,</if>
+			<if test="createTime != null">create_time,</if>
+			<if test="updateBy != null">update_by,</if>
+			<if test="updateTime != null">update_time,</if>
+			<if test="remark != null">remark,</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="parentId != null">#{parentId},</if>
+			<if test="name != null and name != ''">#{name},</if>
+			<if test="pageId != null">#{pageId},</if>
+			<if test="param != null">#{param},</if>
+			<if test="sort != null">#{sort},</if>
+			<if test="delFlag != null">#{delFlag},</if>
+			<if test="createBy != null">#{createBy},</if>
+			<if test="createTime != null">#{createTime},</if>
+			<if test="updateBy != null">#{updateBy},</if>
+			<if test="updateTime != null">#{updateTime},</if>
+			<if test="remark != null">#{remark},</if>
+		</trim>
+	</insert>
+
+	<update id="updateTMenu" parameterType="TMenu">
+		update t_menu
+		<trim prefix="SET" suffixOverrides=",">
+			<if test="sort != null">sort = #{sort},</if>
+			<if test="name != null and name != ''">`name` = #{name},</if>
+			<if test="pageId != null">`page_id` = #{pageId},</if>
+			<if test="param != null">param = #{param},</if>
+			<if test="delFlag != null">del_flag = #{delFlag},</if>
+			<if test="createBy != null">create_by = #{createBy},</if>
+			<if test="createTime != null">create_time = #{createTime},</if>
+			<if test="updateBy != null">update_by = #{updateBy},</if>
+			<if test="updateTime != null">update_time = #{updateTime},</if>
+			<if test="remark != null">remark = #{remark},</if>
+		</trim>
+		where id = #{id}
+	</update>
+
+	<delete id="deleteTMenuById" parameterType="Long">
+		delete from t_menu where id = #{id}
+	</delete>
+
+	<delete id="deleteTMenuByIds" parameterType="String">
+		delete from t_menu where id in
+		<foreach item="id" collection="array" open="(" separator="," close=")">
+			#{id}
+		</foreach>
+	</delete>
+
+</mapper> 

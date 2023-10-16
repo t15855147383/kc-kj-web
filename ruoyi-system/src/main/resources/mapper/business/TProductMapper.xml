@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.business.mapper.TProductMapper">
+
+    <resultMap type="TProduct" id="TProductResult">
+        <result property="id"    column="id"    />
+        <result property="manuId"    column="manu_id"    />
+        <result property="title"    column="title"    />
+        <result property="lable"    column="lable"    />
+        <result property="desc"    column="desc"    />
+        <result property="detail1"    column="detail1"    />
+        <result property="detail2"    column="detail2"    />
+        <result property="detail3"    column="detail3"    />
+        <result property="delFlag"    column="del_flag"    />
+        <result property="createBy"    column="create_by"    />
+        <result property="createTime"    column="create_time"    />
+        <result property="updateBy"    column="update_by"    />
+        <result property="updateTime"    column="update_time"    />
+        <result property="remark"    column="remark"    />
+    </resultMap>
+
+    <sql id="selectTProductVo">
+        select id, manu_id, title, lable, `desc`, detail1, detail2, detail3, del_flag, create_by, create_time, update_by, update_time, remark from t_product
+    </sql>
+
+    <select id="selectTProductList" parameterType="TProduct" resultMap="TProductResult">
+        <include refid="selectTProductVo"/>
+        <where>
+            <if test="manuId != null "> and manu_id = #{manuId}</if>
+            <if test="searchValue != null  and searchValue != ''">
+                and `title` like concat('%', #{searchValue}, '%')
+            </if>
+        </where>
+    </select>
+
+    <select id="selectTProductById" parameterType="Long" resultMap="TProductResult">
+        <include refid="selectTProductVo"/>
+        where id = #{id}
+    </select>
+
+    <insert id="insertTProduct" parameterType="TProduct" useGeneratedKeys="true" keyProperty="id">
+        insert into t_product
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="manuId != null">manu_id,</if>
+            <if test="title != null">title,</if>
+            <if test="lable != null">lable,</if>
+            <if test="desc != null">`desc`,</if>
+            <if test="detail1 != null">detail1,</if>
+            <if test="detail2 != null">detail2,</if>
+            <if test="detail3 != null">detail3,</if>
+            <if test="delFlag != null">del_flag,</if>
+            <if test="createBy != null">create_by,</if>
+            <if test="createTime != null">create_time,</if>
+            <if test="updateBy != null">update_by,</if>
+            <if test="updateTime != null">update_time,</if>
+            <if test="remark != null">remark,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="manuId != null">#{manuId},</if>
+            <if test="title != null">#{title},</if>
+            <if test="lable != null">#{lable},</if>
+            <if test="desc != null">#{desc},</if>
+            <if test="detail1 != null">#{detail1},</if>
+            <if test="detail2 != null">#{detail2},</if>
+            <if test="detail3 != null">#{detail3},</if>
+            <if test="delFlag != null">#{delFlag},</if>
+            <if test="createBy != null">#{createBy},</if>
+            <if test="createTime != null">#{createTime},</if>
+            <if test="updateBy != null">#{updateBy},</if>
+            <if test="updateTime != null">#{updateTime},</if>
+            <if test="remark != null">#{remark},</if>
+        </trim>
+    </insert>
+
+    <update id="updateTProduct" parameterType="TProduct">
+        update t_product
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="manuId != null">manu_id = #{manuId},</if>
+            <if test="title != null">title = #{title},</if>
+            <if test="lable != null">lable = #{lable},</if>
+            <if test="desc != null">`desc` = #{desc},</if>
+            <if test="detail1 != null">detail1 = #{detail1},</if>
+            <if test="detail2 != null">detail2 = #{detail2},</if>
+            <if test="detail3 != null">detail3 = #{detail3},</if>
+            <if test="delFlag != null">del_flag = #{delFlag},</if>
+            <if test="createBy != null">create_by = #{createBy},</if>
+            <if test="createTime != null">create_time = #{createTime},</if>
+            <if test="updateBy != null">update_by = #{updateBy},</if>
+            <if test="updateTime != null">update_time = #{updateTime},</if>
+            <if test="remark != null">remark = #{remark},</if>
+        </trim>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteTProductById" parameterType="Long">
+        delete from t_product where id = #{id}
+    </delete>
+
+    <delete id="deleteTProductByIds" parameterType="String">
+        delete from t_product where id in
+        <foreach item="id" collection="array" open="(" separator="," close=")">
+            #{id}
+        </foreach>
+    </delete>
+</mapper>

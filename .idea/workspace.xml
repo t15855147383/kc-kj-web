@@ -4,64 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd57e2a7-456b-449e-a975-3f07fadf241f" name="Changes" comment="提交">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ruoyi-admin/src/main/java/com/ruoyi/web/controller/business/TMenuController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ruoyi-admin/src/main/java/com/ruoyi/web/controller/business/TPageController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ruoyi-admin/src/main/java/com/ruoyi/web/controller/business/TProductController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ruoyi-api/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ruoyi-api/src/main/java/com/ruoyi/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ruoyi-framework/src/main/java/com/ruoyi/framework/canal/CanalEntryBo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ruoyi-framework/src/main/java/com/ruoyi/framework/canal/CanalListener.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ruoyi-framework/src/main/java/com/ruoyi/framework/canal/CanalMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ruoyi-framework/src/main/java/com/ruoyi/framework/canal/config/CanalConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ruoyi-framework/src/main/java/com/ruoyi/framework/canal/service/CanalService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ruoyi-framework/src/main/java/com/ruoyi/framework/kafka/KafkaConsumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ruoyi-framework/src/main/java/com/ruoyi/framework/kafka/config/KafkaConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ruoyi-framework/src/main/java/com/ruoyi/framework/kafka/config/KafkaConsumerConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ruoyi-framework/src/main/java/com/ruoyi/framework/kafka/service/KafkaConsumerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ruoyi-framework/src/main/java/com/ruoyi/framework/kafka/service/KafkaProducerService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ruoyi-system/src/main/java/com/ruoyi/business/domain/TImages.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ruoyi-system/src/main/java/com/ruoyi/business/domain/TMenu.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ruoyi-system/src/main/java/com/ruoyi/business/domain/TPage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ruoyi-system/src/main/java/com/ruoyi/business/domain/TProduct.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ruoyi-system/src/main/java/com/ruoyi/business/mapper/TImagesMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ruoyi-system/src/main/java/com/ruoyi/business/mapper/TMenuMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ruoyi-system/src/main/java/com/ruoyi/business/mapper/TPageMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ruoyi-system/src/main/java/com/ruoyi/business/mapper/TProductMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ruoyi-system/src/main/java/com/ruoyi/business/service/ITMenuService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ruoyi-system/src/main/java/com/ruoyi/business/service/ITPageService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ruoyi-system/src/main/java/com/ruoyi/business/service/ITProductService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ruoyi-system/src/main/java/com/ruoyi/business/service/impl/TMenuServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ruoyi-system/src/main/java/com/ruoyi/business/service/impl/TPageServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ruoyi-system/src/main/java/com/ruoyi/business/service/impl/TProductServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ruoyi-system/src/main/resources/mapper/business/TImagesMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ruoyi-system/src/main/resources/mapper/business/TMenuMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ruoyi-system/src/main/resources/mapper/business/TPageMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ruoyi-system/src/main/resources/mapper/business/TProductMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ruoyi-ui/src/api/business/menu.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ruoyi-ui/src/api/business/page.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ruoyi-ui/src/api/business/product.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/business/menu/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/business/page/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/business/product/index.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/components/image/VImages.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ruoyi-admin/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-admin/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ruoyi-admin/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-admin/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ruoyi-common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ruoyi-framework/src/main/java/com/ruoyi/framework/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-framework/src/main/java/com/ruoyi/framework/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ruoyi-system/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-system/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ruoyi-ui/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/components/ImageUpload/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/components/ImageUpload/index.vue" afterDir="false" />
-    </list>
+    <list default="true" id="fd57e2a7-456b-449e-a975-3f07fadf241f" name="Changes" comment="提交" />
     <list id="6e684882-d3f3-45dd-bb08-36fea1b4298e" name="ignore-file" comment="">
       <change afterPath="$PROJECT_DIR$/ruoyi-admin/target/classes/META-INF/spring-devtools.properties" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ruoyi-admin/target/classes/application-druid.yml" afterDir="false" />
@@ -602,7 +545,7 @@
       <workItem from="1697071712424" duration="10732000" />
       <workItem from="1697095867980" duration="11538000" />
       <workItem from="1697177663024" duration="11296000" />
-      <workItem from="1697417767547" duration="1272000" />
+      <workItem from="1697417767547" duration="2445000" />
     </task>
     <task id="LOCAL-00001" summary="提交">
       <option name="closed" value="true" />
@@ -612,7 +555,23 @@
       <option name="project" value="LOCAL" />
       <updated>1696829287687</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="提交">
+      <option name="closed" value="true" />
+      <created>1697419053465</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1697419053465</updated>
+    </task>
+    <task id="LOCAL-00003" summary="提交">
+      <option name="closed" value="true" />
+      <created>1697419143989</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1697419143989</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -1,6 +1,9 @@
 package com.ruoyi.controller;
 
 import com.ruoyi.common.core.controller.BaseController;
+import com.ruoyi.common.core.redis.RedisCache;
+import com.ruoyi.common.core.redis.RedisKey;
+import com.ruoyi.framework.config.RedisConfig;
 import com.ruoyi.framework.kafka.service.KafkaProducerService;
 import org.apache.kafka.clients.producer.ProducerRecord;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,6 +25,21 @@ public class UserController extends BaseController {
     private KafkaProducerService kafkaProducerService;
     @Autowired
     private KafkaTemplate<String, String> kafkaTemplate;
+    @Autowired
+    private RedisCache redisCache;
+    @RequestMapping("/setRedis")
+    private void setRedis(){
+        Map<String,Object> map = new HashMap<String,Object>();
+        map.put("name","123");
+        map.put("test","345");
+        redisCache.setCacheMap(RedisKey.TEST_001,map);
+    }
+    @RequestMapping("/getRedis")
+    private Map<String,Object> getRedis(){
+        Map<String,Object> map = redisCache.getCacheMap(RedisKey.TEST_001);
+        redisCache.deleteObject(RedisKey.TEST_001);
+        return map;
+    }
 
     private String topicName="kc-kj-web-test";
 

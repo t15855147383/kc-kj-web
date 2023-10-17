@@ -134,7 +134,7 @@ kafka:
   host: 127.0.0.1
   port: 9092
   groupId: test
-  topics: kc-kj-web-test
+  topics: example
   offsetReset: earliest
 canal:
   host: 127.0.0.1

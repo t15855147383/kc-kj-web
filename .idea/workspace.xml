@@ -4,7 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd57e2a7-456b-449e-a975-3f07fadf241f" name="Changes" comment="提交" />
+    <list default="true" id="fd57e2a7-456b-449e-a975-3f07fadf241f" name="Changes" comment="提交">
+      <change afterPath="$PROJECT_DIR$/ruoyi-common/src/main/java/com/ruoyi/common/core/redis/RedisKey.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ruoyi-framework/src/main/java/com/ruoyi/framework/kafka/config/MysqlMessagePOJO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-admin/src/main/java/com/ruoyi/RuoYiApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-admin/src/main/java/com/ruoyi/RuoYiApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-admin/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-admin/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-api/src/main/java/com/ruoyi/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-api/src/main/java/com/ruoyi/controller/UserController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-framework/src/main/java/com/ruoyi/framework/canal/CanalListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-framework/src/main/java/com/ruoyi/framework/canal/CanalListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-framework/src/main/java/com/ruoyi/framework/canal/CanalMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-framework/src/main/java/com/ruoyi/framework/canal/CanalMessage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-framework/src/main/java/com/ruoyi/framework/kafka/KafkaConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-framework/src/main/java/com/ruoyi/framework/kafka/KafkaConsumer.java" afterDir="false" />
+    </list>
     <list id="6e684882-d3f3-45dd-bb08-36fea1b4298e" name="ignore-file" comment="">
       <change afterPath="$PROJECT_DIR$/ruoyi-admin/target/classes/META-INF/spring-devtools.properties" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/ruoyi-admin/target/classes/application-druid.yml" afterDir="false" />
@@ -430,22 +440,6 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.RuoYiApplication">
-    <configuration name="KafkaConsumer.consume" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ruoyi-admin" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.ruoyi.web.core.config.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.ruoyi.web.core.config" />
-      <option name="MAIN_CLASS_NAME" value="com.ruoyi.web.core.config.KafkaConsumer" />
-      <option name="METHOD_NAME" value="consume" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="KafkaTest.cotextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ruoyi-admin" />
       <extension name="coverage">
@@ -494,6 +488,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="Main.test1" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ruoyi-api" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ruoyi.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ruoyi" />
+      <option name="MAIN_CLASS_NAME" value="com.ruoyi.Main" />
+      <option name="METHOD_NAME" value="test1" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main.test2" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ruoyi-admin" />
       <extension name="coverage">
@@ -520,11 +530,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.Main.test1" />
         <item itemvalue="JUnit.Main.test1 (1)" />
         <item itemvalue="JUnit.KafkaTest.cotextLoads" />
         <item itemvalue="JUnit.Main.cotextLoads" />
         <item itemvalue="JUnit.Main.test2" />
-        <item itemvalue="JUnit.KafkaConsumer.consume" />
       </list>
     </recent_temporary>
   </component>
@@ -545,7 +555,8 @@
       <workItem from="1697071712424" duration="10732000" />
       <workItem from="1697095867980" duration="11538000" />
       <workItem from="1697177663024" duration="11296000" />
-      <workItem from="1697417767547" duration="2445000" />
+      <workItem from="1697417767547" duration="13472000" />
+      <workItem from="1697506300664" duration="13052000" />
     </task>
     <task id="LOCAL-00001" summary="提交">
       <option name="closed" value="true" />
@@ -571,7 +582,15 @@
       <option name="project" value="LOCAL" />
       <updated>1697419143989</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="提交">
+      <option name="closed" value="true" />
+      <created>1697420843247</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1697420843247</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

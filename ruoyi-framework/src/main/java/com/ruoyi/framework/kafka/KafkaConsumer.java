@@ -1,5 +1,7 @@
 package com.ruoyi.framework.kafka;
 
+import com.alibaba.fastjson.JSONObject;
+import com.ruoyi.framework.kafka.config.MysqlMessagePOJO;
 import com.ruoyi.framework.kafka.service.KafkaConsumerService;
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.slf4j.Logger;
@@ -15,8 +17,21 @@ public class KafkaConsumer {
     @Autowired
     private KafkaConsumerService kafkaConsumerService;
 
-    @KafkaListener(topics = "${kafka.topics}",groupId = "${kafka.groupId}")
-    public void listenerMessage(ConsumerRecord<String, String> record) {
+    @KafkaListener(topics = "mysql01",groupId = "${kafka.groupId}")
+    public void mysql01(ConsumerRecord<String, String> record) {
         logger.info("接收到kafka消息键为:{},消息值为:{},消息头为:{},消息分区为:{},消息主题为:{}", record.key(), record.value(), record.headers(), record.partition(), record.topic());
+        JSONObject json = JSONObject.parseObject(record.value());
+        MysqlMessagePOJO message = json.toJavaObject(MysqlMessagePOJO.class);
+        System.out.println(message.toString());
+    }
+    @KafkaListener(topics = "kc-kj-base",groupId = "${kafka.groupId}")
+    public void kckjbase(ConsumerRecord<String, String> record) {
+        logger.info("接收到kafka消息键为:{},消息值为:{},消息头为:{},消息分区为:{},消息主题为:{}", record.key(), record.value(), record.headers(), record.partition(), record.topic());
+
+    }
+    @KafkaListener(topics = "kc-kj-activity",groupId = "${kafka.groupId}")
+    public void kckjactivity(ConsumerRecord<String, String> record) {
+        logger.info("接收到kafka消息键为:{},消息值为:{},消息头为:{},消息分区为:{},消息主题为:{}", record.key(), record.value(), record.headers(), record.partition(), record.topic());
+
     }
 }

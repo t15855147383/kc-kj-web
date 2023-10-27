@@ -1,0 +1,10 @@
+com\ruoyi\kafka\service\KafkaProducerService$2.class
+com\ruoyi\kafka\service\KafkaProducerService.class
+com\ruoyi\kafka\config\KafkaConfig.class
+com\ruoyi\kafka\service\KafkaProducerService$4.class
+com\ruoyi\kafka\config\MysqlMessagePOJO.class
+com\ruoyi\kafka\KafkaConsumer.class
+com\ruoyi\kafka\service\KafkaProducerService$1.class
+com\ruoyi\kafka\service\KafkaConsumerService.class
+com\ruoyi\kafka\service\KafkaProducerService$3.class
+com\ruoyi\kafka\config\KafkaConsumerConfig.class

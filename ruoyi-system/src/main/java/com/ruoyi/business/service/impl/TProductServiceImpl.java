@@ -27,7 +27,7 @@ public class TProductServiceImpl implements ITProductService
     @Override
     public TProduct selectTProductById(Long id) {
         TProduct product = tProductMapper.selectTProductById(id);
-        product.setImages(tImagesMapper.selectTImagesList(id,"product_images"));
+        //product.setImages(tImagesMapper.selectTImagesList(id,"product_images"));
         return product;
     }
 
@@ -39,26 +39,26 @@ public class TProductServiceImpl implements ITProductService
     @Override
     public int insertTProduct(TProduct tProduct) {
         int row = tProductMapper.insertTProduct(tProduct);
-        if(tProduct.getImages() != null && !tProduct.getImages().isEmpty()){
+        /*if(tProduct.getImages() != null && !tProduct.getImages().isEmpty()){
             for(TImages image:tProduct.getImages()){
                 image.setFromId(tProduct.getId());
                 image.setFromType("product_images");
                 tImagesMapper.insertTImages(image);
             }
-        }
+        }*/
         return row;
     }
 
     @Override
     public int updateTProduct(TProduct tProduct) {
-        tImagesMapper.deleteTImagesById(tProduct.getId(),"product_images");
+        /*tImagesMapper.deleteTImagesById(tProduct.getId(),"product_images");
         if(tProduct.getImages() != null && !tProduct.getImages().isEmpty()){
             for(TImages image:tProduct.getImages()){
                 image.setFromId(tProduct.getId());
                 image.setFromType("product_images");
                 tImagesMapper.insertTImages(image);
             }
-        }
+        }*/
         return tProductMapper.updateTProduct(tProduct);
     }
 

@@ -1,8 +1,11 @@
 package com.ruoyi.business.domain;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import com.ruoyi.common.core.domain.BaseEntity;
+import org.springframework.format.annotation.DateTimeFormat;
 
 import java.math.BigDecimal;
+import java.util.Date;
 
 /**
  * 产品图片对象 t_images
@@ -18,14 +21,13 @@ public class TImages extends BaseEntity
     private Long id;
 
     /** 外键ID */
-    private Long fromId;
-
-    /** 外键类型 */
-    private String fromType;
+    private Long folderId;
     private String name;
 
     /** 地址 */
     private String url;
+    /** 源图地址 */
+    private String sourceUrl;
 
     /** 宽度（px） */
     private BigDecimal width;
@@ -41,87 +43,23 @@ public class TImages extends BaseEntity
 
     /** 后缀 */
     private String suffix;
+    @DateTimeFormat(pattern = "yyyy-MM-dd HH:mm:ss")
+    private Date originalTime;
 
-    public void setId(Long id)
-    {
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
         this.id = id;
     }
 
-    public Long getId()
-    {
-        return id;
-    }
-    public void setFromId(Long fromId)
-    {
-        this.fromId = fromId;
+    public Long getFolderId() {
+        return folderId;
     }
 
-    public Long getFromId()
-    {
-        return fromId;
-    }
-    public void setFromType(String fromType)
-    {
-        this.fromType = fromType;
-    }
-
-    public String getFromType()
-    {
-        return fromType;
-    }
-    public void setUrl(String url)
-    {
-        this.url = url;
-    }
-
-    public String getUrl()
-    {
-        return url;
-    }
-    public void setWidth(BigDecimal width)
-    {
-        this.width = width;
-    }
-
-    public BigDecimal getWidth()
-    {
-        return width;
-    }
-    public void setHeight(BigDecimal height)
-    {
-        this.height = height;
-    }
-
-    public BigDecimal getHeight()
-    {
-        return height;
-    }
-    public void setSize(BigDecimal size)
-    {
-        this.size = size;
-    }
-
-    public BigDecimal getSize()
-    {
-        return size;
-    }
-    public void setMime(String mime)
-    {
-        this.mime = mime;
-    }
-
-    public String getMime()
-    {
-        return mime;
-    }
-    public void setSuffix(String suffix)
-    {
-        this.suffix = suffix;
-    }
-
-    public String getSuffix()
-    {
-        return suffix;
+    public void setFolderId(Long folderId) {
+        this.folderId = folderId;
     }
 
     public String getName() {
@@ -130,5 +68,69 @@ public class TImages extends BaseEntity
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public BigDecimal getWidth() {
+        return width;
+    }
+
+    public void setWidth(BigDecimal width) {
+        this.width = width;
+    }
+
+    public BigDecimal getHeight() {
+        return height;
+    }
+
+    public void setHeight(BigDecimal height) {
+        this.height = height;
+    }
+
+    public BigDecimal getSize() {
+        return size;
+    }
+
+    public void setSize(BigDecimal size) {
+        this.size = size;
+    }
+
+    public String getMime() {
+        return mime;
+    }
+
+    public void setMime(String mime) {
+        this.mime = mime;
+    }
+
+    public String getSuffix() {
+        return suffix;
+    }
+
+    public void setSuffix(String suffix) {
+        this.suffix = suffix;
+    }
+
+    public Date getOriginalTime() {
+        return originalTime;
+    }
+
+    public void setOriginalTime(Date originalTime) {
+        this.originalTime = originalTime;
+    }
+
+    public String getSourceUrl() {
+        return sourceUrl;
+    }
+
+    public void setSourceUrl(String sourceUrl) {
+        this.sourceUrl = sourceUrl;
     }
 }

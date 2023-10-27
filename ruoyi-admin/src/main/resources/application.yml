@@ -67,6 +67,14 @@ spring:
     restart:
       # 热部署开关
       enabled: true
+
+  activiti:
+    check-process-definitions: false
+    database-schema-update: true
+    history-level: full
+    db-history-used: true
+  main:
+    allow-bean-definition-overriding: true
   # redis 配置
   redis:
     # 地址
@@ -134,11 +142,7 @@ kafka:
   host: 127.0.0.1
   port: 9092
   groupId: test
-  topics: example
+  topics01: kc-kj-base
+  topics02: kc-kj-activity
+  topics03: mysql01
   offsetReset: earliest
-canal:
-  host: 127.0.0.1
-  post: 11111
-  tableName: kc-kj-web
-  batchSize: 10000
-  sleep: 10

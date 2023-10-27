@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.activiti.mapper.ActWorkflowProcessMapper">
+
+    <select id="selectActWorkflowProcess" resultType="ActWorkflowProcess">
+        select `ID_` `id`,`PROC_DEF_ID_` `procDefId`,`PASS_` `pass`,`REJECT_` `reject`,`PAGE_` `page`
+        from act_workflow_process
+        where `PROC_DEF_ID_` = #{procDefId}
+    </select>
+    <select id="selectActWorkflowTask" resultType="ActWorkflowTask">
+        select t.`ID_` `id`,
+               t.`PROCESS_ID_` `processId`,
+               t.`ELEMENT_ID_` `elementId`,
+               t.`ELEMENT_NAME_` `elementName`,
+               t.`SORT_` `sort`,
+                (select count(`ID_`) from act_workflow_assignee where TASK_ID_ = t.`ID_`) `assigneeCount`
+
+        from act_workflow_task t
+        where t.`PROCESS_ID_` = #{processId} and t.`ELEMENT_ID_` = #{elementId}
+    </select>
+    <select id="selectActWorkflowAssignee" resultType="ActWorkflowAssignee">
+        select `ID_` `id`,
+               `TASK_ID_` `taskId`,
+               `TYPE_` `type`,
+               `USER_ID_` `userId`,
+               `POST_ID_` `postId`,
+               `ROLE_ID_` `roleId`,
+               `USER_OUT_` `userOut`,
+               `USER_IN_` `userIn`
+        from act_workflow_assignee
+        where `TASK_ID_` = #{taskId}
+        order by `CREATE_TIME_` asc
+    </select>
+
+    <insert id="insertActWorkflowProcess" parameterType="ActWorkflowProcess" useGeneratedKeys="true" keyProperty="id">
+        insert into act_workflow_process
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">ID_,</if>
+            <if test="procDefId != null">PROC_DEF_ID_,</if>
+            <if test="pass != null">PASS_,</if>
+            <if test="reject != null">REJECT_,</if>
+            <if test="page != null">PAGE_,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id},</if>
+            <if test="procDefId != null">#{procDefId},</if>
+            <if test="pass != null">#{pass},</if>
+            <if test="reject != null">#{reject},</if>
+            <if test="page != null">#{page},</if>
+        </trim>
+    </insert>
+    <insert id="insertActWorkflowTask" parameterType="ActWorkflowTask" useGeneratedKeys="true" keyProperty="id">
+        insert into act_workflow_task
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">ID_,</if>
+            <if test="processId != null">PROCESS_ID_,</if>
+            <if test="elementId != null">ELEMENT_ID_,</if>
+            <if test="elementName != null">ELEMENT_NAME_,</if>
+            <if test="sort != null">SORT_,</if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id},</if>
+            <if test="processId != null">#{processId},</if>
+            <if test="elementId != null">#{elementId},</if>
+            <if test="elementName != null">#{elementName},</if>
+            <if test="sort != null">#{sort},</if>
+        </trim>
+    </insert>
+    <insert id="insertActWorkflowAssignee" parameterType="ActWorkflowAssignee" useGeneratedKeys="true" keyProperty="id">
+        insert into act_workflow_task
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">ID_,</if>
+            <if test="taskId != null">TASK_ID_,</if>
+            <if test="type != null">TYPE_,</if>
+            <if test="userId != null">USER_ID_,</if>
+            <if test="postId != null">POST_ID_,</if>
+            <if test="roleId != null">ROLE_ID_,</if>
+            <if test="userOut != null">USER_OUT_,</if>
+            <if test="userIn != null">USER_IN_,</if>
+            CREATE_TIME_,
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">#{id},</if>
+            <if test="taskId != null">#{taskId},</if>
+            <if test="type != null">#{type},</if>
+            <if test="userId != null">#{userId},</if>
+            <if test="postId != null">#{postId},</if>
+            <if test="roleId != null">#{roleId},</if>
+            <if test="userOut != null">#{userOut},</if>
+            <if test="userIn != null">#{userIn},</if>
+            NOW(),
+        </trim>
+    </insert>
+
+    <update id="updateActWorkflowProcess" parameterType="ActWorkflowProcess">
+        update act_workflow_process
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="pass != null">PASS_ = #{pass},</if>
+            <if test="reject != null">REJECT_ = #{reject},</if>
+            <if test="page != null">PAGE_ = #{page},</if>
+        </trim>
+        where ID_ = #{id}
+    </update>
+    <update id="updateActWorkflowTask" parameterType="ActWorkflowTask">
+        update act_workflow_task
+        <trim prefix="SET" suffixOverrides=",">
+            <if test="sort != null">SORT_ = #{sort},</if>
+        </trim>
+        where ID_ = #{id}
+    </update>
+
+    <delete id="deleteActWorkflowAssignee" parameterType="String">
+        delete from act_workflow_assignee where TASK_ID_ = #{taskId}
+    </delete>
+</mapper>
+

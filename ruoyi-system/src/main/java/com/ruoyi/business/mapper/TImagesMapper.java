@@ -16,12 +16,11 @@ public interface TImagesMapper
     /**
      * 查询产品图片
      *
-     * @param fromId 外键Id
-     * @param fromType 外键类型
+     * @param folderId 外键Id
      * @return 产品图片
      */
-    public List<TImages> selectTImagesList(@Param("fromId") Long fromId, @Param("fromType") String fromType);
-    public TImages selectTImagesMap(@Param("fromId") Long fromId, @Param("fromType") String fromType);
+    public List<TImages> selectTImagesList(Long folderId);
+    public TImages selectTImagesById(Long id);
     /**
      * 新增产品图片
      *
@@ -33,9 +32,8 @@ public interface TImagesMapper
     /**
      * 删除产品图片
      *
-     * @param fromId 外键Id
-     * @param fromType 外键类型
+     * @param ids id
      * @return 结果
      */
-    public int deleteTImagesById(@Param("fromId") Long fromId,@Param("fromType") String fromType);
+    public int deleteTImagesByIds(Long[] ids);
 }

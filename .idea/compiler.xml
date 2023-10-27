@@ -10,11 +10,17 @@
         <module name="ruoyi-framework" />
         <module name="ruoyi-system" />
         <module name="ruoyi-api" />
+        <module name="ruoyi-activiti" />
+        <module name="ruoyi-workflow" />
         <module name="ruoyi-common" />
         <module name="ruoyi-generator" />
+        <module name="ruoyi-kafka" />
         <module name="ruoyi-quartz" />
         <module name="ruoyi-admin" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="ruoyi-workFlow" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>

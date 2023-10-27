@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.activiti.mapper.ActReDeploymentMapper">
+
+	<resultMap type="ActReDeploymentVO" id="ActReDeploymentResult">
+		<id     property="id"       column="id"      />
+		<result property="deployTime"       column="deploy_time"      />
+	</resultMap>
+	
+
+	<sql id="selectDeploymentVo">
+       select ID_ id,DEPLOY_TIME_ deploy_time from `act_re_deployment`
+    </sql>
+
+	
+	<select id="selectActReDeploymentByIds"  parameterType="String" resultMap="ActReDeploymentResult">
+	    <include refid="selectDeploymentVo"/>
+		where ID_  in
+		<foreach collection="ids" item="id" index="index" open="(" separator="," close=")">
+			#{id}
+		</foreach>
+	</select>
+	<select id="selectActReProcdefByKey" resultType="ActReProcdefVO">
+		select
+		    `ID_` `id` ,
+			`CATEGORY_` `category` ,
+			`DEPLOYMENT_ID_` `deploymentId`,
+			`RESOURCE_NAME_` `resourceName`
+		from act_re_procdef where KEY_ = #{key}
+	</select>
+	<delete id="deleteActReProcdef">
+		DELETE FROM ACT_RE_PROCDEF WHERE DEPLOYMENT_ID_ = #{id}
+	</delete>
+	<delete id="deleteActGeBytearray">
+		DELETE FROM ACT_GE_BYTEARRAY WHERE DEPLOYMENT_ID_ = #{deploymentId}
+	</delete>
+	<delete id="deleteActReDeployment">
+		DELETE FROM ACT_RE_DEPLOYMENT WHERE ID_ = #{id}
+	</delete>
+	<update id="updateActGeBytearray" parameterType="String">
+		UPDATE ACT_GE_BYTEARRAY SET DEPLOYMENT_ID_ = #{deploymentId} WHERE DEPLOYMENT_ID_ = #{id}
+	</update>
+	<update id="updateActReProcdef" parameterType="ActReProcdefVO">
+		update act_re_procdef
+		<trim prefix="SET" suffixOverrides=",">
+			<if test="rev != null">REV_ = #{rev},</if>
+			<if test="category != null">CATEGORY_ = #{category},</if>
+			<if test="name != null">NAME_ = #{name},</if>
+			<if test="version != null">VERSION_ = #{version},</if>
+			<if test="dgrmResourceName != null">DGRM_RESOURCE_NAME_ = #{dgrmResourceName},</if>
+			<if test="description != null">DESCRIPTION_ = #{description},</if>
+			<if test="hasStartFormKey != null">HAS_START_FORM_KEY_ = #{hasStartFormKey},</if>
+			<if test="hasGraphicalNotation != null">HAS_GRAPHICAL_NOTATION_ = #{hasGraphicalNotation},</if>
+			<if test="suspensionState != null">SUSPENSION_STATE_ = #{suspensionState},</if>
+			<if test="tenantId != null">TENANT_ID_ = #{tenantId},</if>
+			<if test="engineVersion != null">ENGINE_VERSION_ = #{engineVersion},</if>
+		</trim>
+		where DEPLOYMENT_ID_ = #{id}
+	</update>
+</mapper> 

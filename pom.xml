@@ -30,6 +30,9 @@
         <poi.version>4.1.2</poi.version>
         <velocity.version>2.3</velocity.version>
         <jwt.version>0.9.1</jwt.version>
+        <canal.client.version>1.1.4</canal.client.version>
+        <spring-kafka.version>2.9.0</spring-kafka.version>
+        <metadata-extractor.version>2.16.0</metadata-extractor.version>
     </properties>
 
     <!-- 依赖声明 -->
@@ -138,13 +141,19 @@
             <dependency>
                 <groupId>com.alibaba.otter</groupId>
                 <artifactId>canal.client</artifactId>
-                <version>1.1.4</version>
+                <version>${canal.client.version}</version>
             </dependency>
             <!-- KAFKA -->
             <dependency>
                 <groupId>org.springframework.kafka</groupId>
                 <artifactId>spring-kafka</artifactId>
-                <version>2.9.0</version>
+                <version>${spring-kafka.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>com.drewnoakes</groupId>
+                <artifactId>metadata-extractor</artifactId>
+                <version>${metadata-extractor.version}</version>
             </dependency>
 
             <!-- 接口模块-->
@@ -189,6 +198,27 @@
                 <version>${ruoyi.version}</version>
             </dependency>
 
+            <!-- 流程管理-->
+            <dependency>
+                <groupId>com.ruoyi</groupId>
+                <artifactId>ruoyi-activiti</artifactId>
+                <version>${ruoyi.version}</version>
+            </dependency>
+
+            <!-- 工作流程-->
+            <dependency>
+                <groupId>com.ruoyi</groupId>
+                <artifactId>ruoyi-workflow</artifactId>
+                <version>${ruoyi.version}</version>
+            </dependency>
+
+            <!-- 消息队列-->
+            <dependency>
+                <groupId>com.ruoyi</groupId>
+                <artifactId>ruoyi-kafka</artifactId>
+                <version>${ruoyi.version}</version>
+            </dependency>
+
         </dependencies>
     </dependencyManagement>
 
@@ -200,6 +230,9 @@
         <module>ruoyi-generator</module>
         <module>ruoyi-common</module>
         <module>ruoyi-api</module>
+        <module>ruoyi-activiti</module>
+        <module>ruoyi-workflow</module>
+        <module>ruoyi-kafka</module>
     </modules>
     <packaging>pom</packaging>
 

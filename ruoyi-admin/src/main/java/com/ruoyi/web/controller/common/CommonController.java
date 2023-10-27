@@ -1,9 +1,13 @@
 package com.ruoyi.web.controller.common;
 
+import java.io.File;
 import java.util.ArrayList;
 import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+
+import com.ruoyi.common.utils.file.ExifUtil;
+import com.ruoyi.common.utils.file.FileUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +22,6 @@ import com.ruoyi.common.constant.Constants;
 import com.ruoyi.common.core.domain.AjaxResult;
 import com.ruoyi.common.utils.StringUtils;
 import com.ruoyi.common.utils.file.FileUploadUtils;
-import com.ruoyi.common.utils.file.FileUtils;
 import com.ruoyi.framework.config.ServerConfig;
 
 /**
@@ -87,6 +90,9 @@ public class CommonController
             ajax.put("fileName", fileName);
             ajax.put("newFileName", FileUtils.getName(fileName));
             ajax.put("originalFilename", file.getOriginalFilename());
+            File file_ = new File(file.getOriginalFilename());
+            org.apache.commons.io.FileUtils.copyInputStreamToFile(file.getInputStream(), file_);
+            ajax.put("exif", ExifUtil.getImageTime(file_));
             return ajax;
         }
         catch (Exception e)

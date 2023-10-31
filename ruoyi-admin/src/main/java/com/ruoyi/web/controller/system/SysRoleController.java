@@ -63,6 +63,12 @@ public class SysRoleController extends BaseController
         List<SysRole> list = roleService.selectRoleList(role);
         return getDataTable(list);
     }
+    @GetMapping("/all")
+    public AjaxResult all()
+    {
+        List<SysRole> list = roleService.selectRoleList(new SysRole());
+        return AjaxResult.success(list);
+    }
 
     @Log(title = "角色管理", businessType = BusinessType.EXPORT)
     @PreAuthorize("@ss.hasPermi('system:role:export')")

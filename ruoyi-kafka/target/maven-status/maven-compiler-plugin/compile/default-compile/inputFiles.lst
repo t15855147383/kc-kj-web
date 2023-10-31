@@ -1,6 +1,6 @@
 D:\IdeaProjects\kc-kj-web\ruoyi-kafka\src\main\java\com\ruoyi\kafka\service\KafkaConsumerService.java
 D:\IdeaProjects\kc-kj-web\ruoyi-kafka\src\main\java\com\ruoyi\kafka\config\KafkaConsumerConfig.java
 D:\IdeaProjects\kc-kj-web\ruoyi-kafka\src\main\java\com\ruoyi\kafka\KafkaConsumer.java
-D:\IdeaProjects\kc-kj-web\ruoyi-kafka\src\main\java\com\ruoyi\kafka\config\MysqlMessagePOJO.java
+D:\IdeaProjects\kc-kj-web\ruoyi-kafka\src\main\java\com\ruoyi\kafka\pojo\MysqlMessagePOJO.java
 D:\IdeaProjects\kc-kj-web\ruoyi-kafka\src\main\java\com\ruoyi\kafka\config\KafkaConfig.java
 D:\IdeaProjects\kc-kj-web\ruoyi-kafka\src\main\java\com\ruoyi\kafka\service\KafkaProducerService.java

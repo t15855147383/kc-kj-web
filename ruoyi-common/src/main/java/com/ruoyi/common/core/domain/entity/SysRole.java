@@ -54,6 +54,7 @@ public class SysRole extends BaseEntity
 
     /** 用户是否存在此角色标识 默认不存在 */
     private boolean flag = false;
+    private Long roleTypeId;
 
     /** 菜单组 */
     private Long[] menuIds;
@@ -217,6 +218,14 @@ public class SysRole extends BaseEntity
     public void setPermissions(Set<String> permissions)
     {
         this.permissions = permissions;
+    }
+
+    public Long getRoleTypeId() {
+        return roleTypeId;
+    }
+
+    public void setRoleTypeId(Long roleTypeId) {
+        this.roleTypeId = roleTypeId;
     }
 
     @Override

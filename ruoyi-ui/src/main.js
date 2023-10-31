@@ -37,6 +37,7 @@ import DictTag from '@/components/DictTag'
 import VueMeta from 'vue-meta'
 // 字典数据组件
 import DictData from '@/components/DictData'
+import Vue2OrgTree from 'vue-tree-color'
 
 // 全局方法挂载
 Vue.prototype.getDicts = getDicts
@@ -61,6 +62,7 @@ Vue.component('ImagePreview', ImagePreview)
 Vue.use(directive)
 Vue.use(plugins)
 Vue.use(VueMeta)
+Vue.use(Vue2OrgTree)
 DictData.install()
 
 /**

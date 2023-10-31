@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.ruoyi.common.core.domain.entity.SysDept;
 import com.ruoyi.common.core.domain.entity.SysMenu;
+import com.ruoyi.common.core.domain.entity.SysRoleType;
 
 /**
  * Treeselect树结构实体类
@@ -30,7 +31,12 @@ public class TreeSelect implements Serializable
     {
 
     }
-
+    public TreeSelect(SysRoleType roleType)
+    {
+        this.id = roleType.getId();
+        this.label = roleType.getName();
+        this.children = roleType.getChildren().stream().map(TreeSelect::new).collect(Collectors.toList());
+    }
     public TreeSelect(SysDept dept)
     {
         this.id = dept.getDeptId();

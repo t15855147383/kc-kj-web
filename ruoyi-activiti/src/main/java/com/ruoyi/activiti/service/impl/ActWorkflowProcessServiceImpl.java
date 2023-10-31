@@ -85,7 +85,6 @@ public class ActWorkflowProcessServiceImpl implements IActWorkflowProcessService
         String taskId = list.get(0).getTaskId();
         actWorkflowProcessMapper.deleteActWorkflowAssignee(taskId);
         for(ActWorkflowAssignee actWorkflowAssignee : list){
-            actWorkflowAssignee.setId(UUID.randomUUID().toString());
             actWorkflowProcessMapper.insertActWorkflowAssignee(actWorkflowAssignee);
         }
         return 1;

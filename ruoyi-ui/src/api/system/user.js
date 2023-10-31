@@ -9,6 +9,12 @@ export function listUser(query) {
     params: query
   })
 }
+export function allUser() {
+  return request({
+    url: '/system/user/all',
+    method: 'get'
+  })
+}
 
 // 查询用户详细
 export function getUser(userId) {

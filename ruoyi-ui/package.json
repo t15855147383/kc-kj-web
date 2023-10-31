@@ -64,6 +64,7 @@
     "vue-meta": "2.4.0",
     "vue-quill-editor": "^3.0.6",
     "vue-router": "3.4.9",
+    "vue-tree-color": "^2.3.2",
     "vuedraggable": "2.24.3",
     "vuex": "3.6.0"
   },
@@ -79,6 +80,8 @@
     "eslint": "7.15.0",
     "eslint-plugin-vue": "7.2.0",
     "html-webpack-plugin": "^5.5.3",
+    "less": "^3.9.0",
+    "less-loader": "^4.1.0",
     "lint-staged": "10.5.3",
     "runjs": "4.4.2",
     "sass": "1.32.13",

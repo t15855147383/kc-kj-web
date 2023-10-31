@@ -4,20 +4,20 @@ import com.ruoyi.common.core.domain.BaseEntity;
 
 public class ActWorkflowAssignee extends BaseEntity {
     private static final long serialVersionUID = 1L;
-    private String id;
+    private Long id;
     private String taskId;
-    private String type;
-    private String userId;
-    private String postId;
-    private String roleId;
-    private String userOut;
-    private String userIn;
+    private String assigneeType;
+    private String assigneeValue;
+    private String sponsorType;
+    private String sponsorValue;
+    private String sponsorUserOut;
+    private String sponsorUserIn;
 
-    public String getId() {
+    public Long getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(Long id) {
         this.id = id;
     }
 
@@ -29,51 +29,51 @@ public class ActWorkflowAssignee extends BaseEntity {
         this.taskId = taskId;
     }
 
-    public String getType() {
-        return type;
+    public String getAssigneeType() {
+        return assigneeType;
     }
 
-    public void setType(String type) {
-        this.type = type;
+    public void setAssigneeType(String assigneeType) {
+        this.assigneeType = assigneeType;
     }
 
-    public String getUserId() {
-        return userId;
+    public String getAssigneeValue() {
+        return assigneeValue;
     }
 
-    public void setUserId(String userId) {
-        this.userId = userId;
+    public void setAssigneeValue(String assigneeValue) {
+        this.assigneeValue = assigneeValue;
     }
 
-    public String getPostId() {
-        return postId;
+    public String getSponsorType() {
+        return sponsorType;
     }
 
-    public void setPostId(String postId) {
-        this.postId = postId;
+    public void setSponsorType(String sponsorType) {
+        this.sponsorType = sponsorType;
     }
 
-    public String getRoleId() {
-        return roleId;
+    public String getSponsorValue() {
+        return sponsorValue;
     }
 
-    public void setRoleId(String roleId) {
-        this.roleId = roleId;
+    public void setSponsorValue(String sponsorValue) {
+        this.sponsorValue = sponsorValue;
     }
 
-    public String getUserOut() {
-        return userOut;
+    public String getSponsorUserOut() {
+        return sponsorUserOut;
     }
 
-    public void setUserOut(String userOut) {
-        this.userOut = userOut;
+    public void setSponsorUserOut(String sponsorUserOut) {
+        this.sponsorUserOut = sponsorUserOut;
     }
 
-    public String getUserIn() {
-        return userIn;
+    public String getSponsorUserIn() {
+        return sponsorUserIn;
     }
 
-    public void setUserIn(String userIn) {
-        this.userIn = userIn;
+    public void setSponsorUserIn(String sponsorUserIn) {
+        this.sponsorUserIn = sponsorUserIn;
     }
 }

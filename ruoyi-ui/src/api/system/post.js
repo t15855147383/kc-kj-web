@@ -9,6 +9,13 @@ export function listPost(query) {
   })
 }
 
+export function allPost() {
+  return request({
+    url: '/system/post/all',
+    method: 'get'
+  })
+}
+
 // 查询岗位详细
 export function getPost(postId) {
   return request({

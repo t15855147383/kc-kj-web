@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ruoyi.system.mapper.SysRoleTypeMapper">
+
+    <resultMap type="SysRoleType" id="SysRoleTypeResult">
+        <id     property="id"             column="id"               />
+        <result property="name"           column="name"             />
+        <result property="parentId"           column="parent_id"             />
+        <result property="delFlag"            column="del_flag"              />
+        <result property="createBy"           column="create_by"             />
+        <result property="createTime"         column="create_time"           />
+        <result property="updateBy"           column="update_by"             />
+        <result property="updateTime"         column="update_time"           />
+        <result property="remark"             column="remark"                />
+    </resultMap>
+
+    <sql id="selectRoleTypeVo">
+        select id,name,parent_id, del_flag, create_time, remark
+        from sys_role_type
+    </sql>
+
+    <select id="selectRoleTypeList" parameterType="SysRoleType" resultMap="SysRoleTypeResult">
+        <include refid="selectRoleTypeVo"/>
+        where del_flag = '0'
+        order by id asc
+    </select>
+
+
+    <insert id="insertRoleType" parameterType="SysRoleType" useGeneratedKeys="true" keyProperty="id">
+        insert into sys_role_type(
+        <if test="name != null and name != ''">name,</if>
+        <if test="createBy != null and createBy != ''">create_by,</if>
+        create_time
+        )values(
+        <if test="name != null and name != ''">#{name},</if>
+        <if test="createBy != null and createBy != ''">#{createBy},</if>
+        sysdate()
+        )
+    </insert>
+
+    <update id="updateRoleType" parameterType="SysRoleType">
+        update sys_role_type
+        <set>
+            <if test="name != null and name != ''">`name` = #{name},</if>
+            <if test="updateBy != null and updateBy != ''">update_by = #{updateBy},</if>
+            update_time = sysdate()
+        </set>
+        where id = #{id}
+    </update>
+
+    <delete id="deleteRoleTypeById" parameterType="Long">
+        update sys_role_type set del_flag = '2' where id = #{id}
+    </delete>
+</mapper>

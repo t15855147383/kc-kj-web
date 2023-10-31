@@ -45,6 +45,13 @@ public class SysPostController extends BaseController
         List<SysPost> list = postService.selectPostList(post);
         return getDataTable(list);
     }
+
+    @GetMapping("/all")
+    public AjaxResult all()
+    {
+        List<SysPost> list = postService.selectPostList(new SysPost());
+        return AjaxResult.success(list);
+    }
     
     @Log(title = "岗位管理", businessType = BusinessType.EXPORT)
     @PreAuthorize("@ss.hasPermi('system:post:export')")

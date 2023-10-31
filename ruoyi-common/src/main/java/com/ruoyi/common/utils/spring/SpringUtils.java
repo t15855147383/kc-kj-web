@@ -125,7 +125,7 @@ public final class SpringUtils implements BeanFactoryPostProcessor, ApplicationC
 
     /**
      * 获取当前的环境配置，无配置返回null
-     *
+     *EnableAspectJAutoProxy
      * @return 当前的环境配置
      */
     public static String[] getActiveProfiles()

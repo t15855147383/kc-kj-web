@@ -53,7 +53,7 @@
               </el-card>
             </div>
         </div>
-      <BpmnAssignee ref="BpmnAssignee"></BpmnAssignee>
+      <BpmnAssignee ref="BpmnAssignee" @selection="getWorkflowTask"></BpmnAssignee>
     </el-dialog>
 
 </template>

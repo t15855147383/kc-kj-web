@@ -1,4 +1,4 @@
-package com.ruoyi.kafka.config;
+package com.ruoyi.kafka.pojo;
 
 import java.io.Serializable;
 import java.util.List;

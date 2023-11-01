@@ -287,9 +287,6 @@
           this.msgSuccess("删除成功");
         }).catch(function () {
         });
-      },
-      modelCancel() {
-        this.getList();
       }
 
     }

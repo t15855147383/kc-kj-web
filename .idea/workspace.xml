@@ -5,54 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd57e2a7-456b-449e-a975-3f07fadf241f" name="Changes" comment="提交">
-      <change afterPath="$PROJECT_DIR$/ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysRoleTypeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ruoyi-common/src/main/java/com/ruoyi/common/core/domain/entity/SysRoleType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ruoyi-system/src/main/java/com/ruoyi/system/mapper/SysRoleTypeMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ruoyi-system/src/main/java/com/ruoyi/system/service/ISysRoleTypeService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ruoyi-system/src/main/java/com/ruoyi/system/service/impl/SysRoleTypeServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ruoyi-system/src/main/resources/mapper/system/SysRoleTypeMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ruoyi-ui/src/api/system/roleType.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/system/dept/choose.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/system/dept/osd.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/system/post/choose.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/system/role/choose.vue" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/system/user/choose.vue" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ruoyi-ui/src/components/Editor/code.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ruoyi-activiti/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-activiti/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ruoyi-activiti/src/main/java/com/ruoyi/activiti/controller/WorkflowProcessController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-activiti/src/main/java/com/ruoyi/activiti/controller/WorkflowProcessController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ruoyi-activiti/src/main/java/com/ruoyi/activiti/domain/ActWorkflowAssignee.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-activiti/src/main/java/com/ruoyi/activiti/domain/ActWorkflowAssignee.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ruoyi-activiti/src/main/java/com/ruoyi/activiti/service/impl/ActWorkflowProcessServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-activiti/src/main/java/com/ruoyi/activiti/service/impl/ActWorkflowProcessServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ruoyi-activiti/src/main/resources/mapper/activiti/ActWorkflowProcessMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-activiti/src/main/resources/mapper/activiti/ActWorkflowProcessMapper.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ruoyi-activiti/target/classes/com/ruoyi/activiti/controller/WorkflowProcessController.class" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-activiti/target/classes/com/ruoyi/activiti/controller/WorkflowProcessController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ruoyi-activiti/target/classes/com/ruoyi/activiti/domain/ActWorkflowAssignee.class" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-activiti/target/classes/com/ruoyi/activiti/domain/ActWorkflowAssignee.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ruoyi-activiti/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-activiti/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ruoyi-activiti/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-activiti/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ruoyi-activiti/target/ruoyi-activiti-3.8.6.jar" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-activiti/target/ruoyi-activiti-3.8.6.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysPostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysPostController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysRoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysRoleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysUserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-admin/src/main/java/com/ruoyi/web/controller/system/SysUserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ruoyi-common/src/main/java/com/ruoyi/common/core/domain/TreeSelect.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-common/src/main/java/com/ruoyi/common/core/domain/TreeSelect.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ruoyi-common/src/main/java/com/ruoyi/common/core/domain/entity/SysRole.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-common/src/main/java/com/ruoyi/common/core/domain/entity/SysRole.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ruoyi-common/src/main/java/com/ruoyi/common/utils/spring/SpringUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-common/src/main/java/com/ruoyi/common/utils/spring/SpringUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ruoyi-kafka/src/main/java/com/ruoyi/kafka/KafkaConsumer.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-kafka/src/main/java/com/ruoyi/kafka/KafkaConsumer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ruoyi-kafka/src/main/java/com/ruoyi/kafka/config/MysqlMessagePOJO.java" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-kafka/src/main/java/com/ruoyi/kafka/pojo/MysqlMessagePOJO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ruoyi-kafka/target/classes/com/ruoyi/kafka/KafkaConsumer.class" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-kafka/target/classes/com/ruoyi/kafka/KafkaConsumer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ruoyi-kafka/target/classes/com/ruoyi/kafka/config/MysqlMessagePOJO.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/ruoyi-kafka/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-kafka/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ruoyi-kafka/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-kafka/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ruoyi-kafka/target/maven-status/maven-compiler-plugin/testCompile/default-testCompile/inputFiles.lst" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/ruoyi-kafka/target/ruoyi-kafka-3.8.6.jar" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-kafka/target/ruoyi-kafka-3.8.6.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ruoyi-system/src/main/resources/mapper/system/SysRoleMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-system/src/main/resources/mapper/system/SysRoleMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ruoyi-ui/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ruoyi-ui/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/api/system/post.js" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/api/system/post.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/api/system/role.js" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/api/system/role.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/api/system/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/api/system/user.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/activiti/definition/bpmnjs-assignee.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/activiti/definition/bpmnjs-assignee.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/activiti/definition/bpmnjs-set.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/activiti/definition/bpmnjs-set.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/system/role/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/system/role/index.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/activiti/definition/bpmnjs-edit.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/activiti/definition/bpmnjs-edit.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ruoyi-ui/src/views/activiti/definition/index.vue" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-ui/src/views/activiti/definition/index.vue" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ruoyi-workFlow/target/ruoyi-workflow-3.8.6.jar" beforeDir="false" afterPath="$PROJECT_DIR$/ruoyi-workFlow/target/ruoyi-workflow-3.8.6.jar" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sql/修复Activiti7M4版本确实字段问题（运行后在引入）.sql" beforeDir="false" afterPath="$PROJECT_DIR$/sql/修复Activiti7M4版本确实字段问题（运行后在引入）.sql" afterDir="false" />
     </list>
     <list id="6e684882-d3f3-45dd-bb08-36fea1b4298e" name="ignore-file" comment="ignore-file" />
     <option name="SHOW_DIALOG" value="false" />
@@ -269,7 +231,8 @@
       <workItem from="1698368332979" duration="5910000" />
       <workItem from="1698378705025" duration="12932000" />
       <workItem from="1698627532325" duration="22538000" />
-      <workItem from="1698715111555" duration="4297000" />
+      <workItem from="1698715111555" duration="20412000" />
+      <workItem from="1698800718733" duration="3809000" />
     </task>
     <task id="LOCAL-00001" summary="提交">
       <option name="closed" value="true" />
@@ -327,7 +290,15 @@
       <option name="project" value="LOCAL" />
       <updated>1698375698783</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="提交">
+      <option name="closed" value="true" />
+      <created>1698720651764</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1698720651764</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -345,9 +316,9 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="提交" />
     <MESSAGE value="ignore-file" />
-    <option name="LAST_COMMIT_MESSAGE" value="ignore-file" />
+    <MESSAGE value="提交" />
+    <option name="LAST_COMMIT_MESSAGE" value="提交" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

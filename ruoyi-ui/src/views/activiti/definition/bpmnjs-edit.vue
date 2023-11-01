@@ -10,7 +10,8 @@
       <div id="js-properties-panel" class="bpmn-js-properties-panel"></div>
     </div>
     <div slot="footer" class="dialog-footer">
-      <el-upload action style="display: inline-block;margin-right: 10px;" :before-upload="openBpmn">
+      <el-button size="mini" icon="el-icon-c-scale-to-original" @click="openEditorCode">代码</el-button>
+      <el-upload action style="display: inline-block;margin: 0px 10px;" :before-upload="openBpmn">
         <el-button size="mini" icon="el-icon-folder-opened">导入</el-button>
       </el-upload>
       <el-button size="mini" icon="el-icon-circle-plus" @click="saveBpmn">部署</el-button>
@@ -18,6 +19,7 @@
       <el-button size="mini" icon="el-icon-picture" @click="downloadSvg">svg</el-button>
       <a hidden ref="downloadLink"></a>
     </div>
+    <EditorCode ref="EditorCode" @selection="submitEditorCode"></EditorCode>
   </el-dialog>
 </template>
 
@@ -42,11 +44,11 @@ import {
   getDefinitionXML,
   getProcdefByKey
 } from "@/api/activiti/definition";
-
+import EditorCode from '@/components/Editor/code.vue';
 
 export default {
   name: "bpmnjs-edit",
-  components:{},
+  components:{EditorCode},
   data() {
     return {
       modelVisible:false,
@@ -54,7 +56,7 @@ export default {
       bpmnModeler: null,
       container: null,
       canvas: null,
-      bpmnTemplate: '<?xml version="1.0" encoding="UTF-8"?>' + '<bpmn:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ' + 'xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" ' + 'xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" ' + 'xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" ' + 'targetNamespace="http://bpmn.io/schema/bpmn" ' + 'id="Definitions_1">' + '<bpmn:process id="Process_1" isExecutable="true">' + '<bpmn:startEvent id="StartEvent_1"/>' + '</bpmn:process>' + '<bpmndi:BPMNDiagram id="BPMNDiagram_1">' + '<bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1">' + '<bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">' + '<dc:Bounds height="36.0" width="36.0" x="173.0" y="102.0"/>' + '</bpmndi:BPMNShape>' + '</bpmndi:BPMNPlane>' + '</bpmndi:BPMNDiagram>' + '</bpmn:definitions>'
+      bpmnTemplate: '<?xml version="1.0" encoding="UTF-8"?>' + '<bpmn:definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ' + 'xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" ' + 'xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" ' + 'xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" ' + 'targetNamespace="http://bpmn.io/schema/bpmn" ' + 'id="Definitions_1">' + '<bpmn:process id="Process_1" isExecutable="true">' + '</bpmn:process>' + '<bpmndi:BPMNDiagram id="BPMNDiagram_1">' + '<bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Process_1">' + '</bpmndi:BPMNPlane>' + '</bpmndi:BPMNDiagram>' + '</bpmn:definitions>'
     };
   },
   mounted() {
@@ -277,7 +279,21 @@ export default {
         downloadLink.click();
       }
     },
-
+    openEditorCode(){
+      let that = this;
+      that.bpmnModeler.saveXML({ format: true }, (err, xml) => {
+        if (!err) {
+          that.$refs.EditorCode.set({
+            mode: 'xml',
+            code: xml
+          });
+        }
+      });
+    },
+    submitEditorCode(code){
+      let that = this;
+      that.createNewDiagram(code);
+    },
 
   },
 }
